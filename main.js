@@ -47,28 +47,28 @@ class PDFdy_Main {
 
 
 
-// Esta clase, es solo un adaptador, no tiene como objetivo ser instanciada, solo adaptar la información de un formato
-// a un formato de arrays con objetos dentro.
+// Esta clase, es solo un adaptador, no tiene como objetivo ser instanciada, solo adaptar la información en un formato
+//  formato de arrays con objetos dentro.
 class Adapter {
 	constructor(){
 		throw new Error("This Class not are avaliable to be instanced"); // Esto solo impide instanciar esta clase
 	}
 
-	// Este metodo  hace  que tome argumentos del
-	// [arg1]: String una opción
+	// Este metodo toma argumentos del
+	// [arg1]: String
 	// [arg2]: Datos (abstractos)
 	static transform(adapterType, adapterData){
 
-		// Este condicional evalua cual adaptador se debe usar, en base al segundo argubento de este metodo
+		// Este condicional evalua el adaptador a usar, en base al segundo argumento
 		switch (adapterType) {
 			case 'api':
-				// this.adapter_api(adapterData)
+				// this.adapter_api
 				break;
 			case 'excel':
-				// this.adapter_excel(adapterData)
+				// this.adapter_excel
 				break;
 			case 'array':
-				// this.adapter_array(adapterData)
+				// this.adapter_array
 				break;
 			default:
 				throw new Error("This adapter called '" + adapterType + "' not exist");
@@ -78,13 +78,13 @@ class Adapter {
 
 
 
-// La clase PDFdy, no es el sistema principal real, es solo una interfaz que abstrae y facilita el uso de la clase real.
+// La clase PDFdy, no es el sistema principal , es solo una interfaz que abstrae y facilita el uso de la clase PDFdy_Main.
 class PDFdy {
 	constructor(){
-		this.adapter = 'api'; // String con el nombre del adaptador que se usara para pasar los datos.
-		this.template = 'path/'; // String con el path del archivo que se usara como plantilla.
-		this.style = "path/";	// String con el path del archivo de estilos que contiene el css del template. ( obligatorio )
-		this.theme = "path/";	// String con el path del archivo de estilos que contiene los temas ( intercambiable ).
+		this.adapter = 'api'; // adaptador que se usara para pasar los datos.
+		this.template = 'path/'; //  path del archivo, se usara como plantilla.
+		this.style = "path/";	//  path del archivo de estilos, contiene el css del template. ( obligatorio )
+		this.theme = "path/";	//  path del archivo de estilos, contiene los temas ( intercambiable ).
 		this.data = [
 			{
 				"id": 1,
@@ -92,15 +92,15 @@ class PDFdy {
 				"description": "not have a description, because not exist data",
 				"price": 4.04,
 				"categories": ["Home", "Kitchen"]
-			}] // Array con objetos que contienen los datos e información que se enviaran a los archivos
+			}] // Array con objetos, contienen los datos e información que se enviaran a los archivos
 	}
 
 
-	// A Continuación siguen los metodos que hacen como interfaz para poder pasar la información (los builder)
+	// A Continuación, los metodos estos actuan como interfaz para poder pasar la información (los builder)
 
 	// [arg1]: String (opcion)
 	setAdapter(adapter){
-		this.adapter = adapter.toLowerCase(); // aqui lo unico que se hace es convertir lo que se envie a minusculas con el metodo toLowerCase().
+		this.adapter = adapter.toLowerCase(); // lo unico que  hace es convertir lo que se envio a minusculas con el metodo toLowerCase().
 		return this;
 	}
 
@@ -121,12 +121,12 @@ class PDFdy {
 
 	// [arg1]: String (origen de datos)
 	setData(data){
-		this.data = Adapter.transform(this.adapter, data); // Este atributo usa el metodo estatico e la clase Adapter llamado transform, y le pasa el nombre del adapter en base a cual se elegira el adaptador; y le pasa el origen de los datos que se transformaran.
+		this.data = Adapter.transform(this.adapter, data); //  atributo, usa el metodo estatico en la clase Adapter llamado transforma y  pasa el nombre del adapter para se elegir el adaptador;pasa el origen de los datos que se transformaran.
 		return this;
 	};
 
 
-	// Este metodo es el que crea la verdadera instancia de la clase principal, pasandole los datos que se establecieron aqui.
+	// Este metodo crea la  instancia de PDFdy_Main de la clase principal, pasandole los datos que se establesen aqui
 	build(){
 		return 0;
 	}
