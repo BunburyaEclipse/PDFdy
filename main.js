@@ -23,18 +23,18 @@
 
 	Clase PDFdy_Main: Es la clase principal que contiene la logica del sistema.
 
-	Clase PDFdy:clase accesible del sistema,es  una interfaz con implementación del patron builder,
-		Funciona solo como la clase encargada de facilitar el uso de la herramienta, y realmente simplemente sirve
-		para ingresar de mejor más organizarla, y pasarla a la verdadera clase principal que es PDFdy_Main.
+	Clase PDFdy:clase accesible del sistema,es  una interfaz que tiene implementado el patron builder,
+		Funciona  como  clase facilitadora la cual usa  herramientas
+		para ingresar y organizar informacion y esta pasa por la clase  PDFdy_Main.
 
-	Clase Adapter: Es una clase no instanciable, simplemente funciona como una colección de diferentes
-		adaptadores, con el fin de devolver los datos de una forma organizada y en el formato que necesita la clase principal (array con objetos dentro).
+	Clase Adapter: Clase no instanciable,funciona como una colección de diferentes adaptadores,
+	 tiene como finalidad devolver  datos de una forma organizada en el formato que se presenta en la clase (array con objetos dentro).
 
 */
 
 
 
-// Esta clase aun no esta terminada, pero es la principal que manejara toda la logica
+// Esta clase esta inconclusa, es la principal la cual manejara toda la logica
 class PDFdy_Main {
 	constructor(adapter, template, theme, data){
 		this.adapter = adapter;
@@ -54,7 +54,7 @@ class Adapter {
 		throw new Error("This Class not are avaliable to be instanced"); // Esto solo impide instanciar esta clase
 	}
 
-	// Este metodo lo que hace es que toma los argumentos del
+	// Este metodo  hace  que tome argumentos del
 	// [arg1]: String una opción
 	// [arg2]: Datos (abstractos)
 	static transform(adapterType, adapterData){
