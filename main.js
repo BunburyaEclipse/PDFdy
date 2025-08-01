@@ -32,6 +32,17 @@
 
 */
 
+// Importación de la libreria Handlebars, esto no tiene que entar aqui y proximamente se separara en un modulo aparte;
+import Handlebars from "handlebars";
+
+/// pruebas
+
+let plantilla = Handlebars.compile("Hola gato llamado {{nombre}}");
+const resultado = plantilla({ nombre: "michael"});
+
+document.getElementById("puta").innerHTML = resultado;
+
+/// pruebas
 
 
 // Esta clase esta inconclusa, es la principal la cual manejara toda la logica
