@@ -10,8 +10,7 @@
 	<script type="module">
 		import { PDFdy, Adapter, loadfile } from './src/PDFdy.js';
 		
-		const PDFF = new PDFdy();
-		await PDFF.setTemplate('templates_demos/templates/bunbu.template.html')
+		const PDFF = await new PDFdy().setTemplate('templates_demos/templates/bunbu.template.html');
 		console.log(PDFF);
 		
 	</script>

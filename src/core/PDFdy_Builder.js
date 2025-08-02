@@ -34,10 +34,15 @@ class PDFdy {
 		return this;
 	};
 
+	// [arg1]: String (path)
+	async setStyle(style){
+		this.style = await loadfile(style);
+		return this;
+	};
 
 	// [arg1]: String (path)
-	setTheme(theme){
-		this.theme = theme;
+	async setTheme(theme){
+		this.theme = await loadfile(theme);
 		return this;
 	};
 
