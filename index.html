@@ -6,12 +6,25 @@
 	<title>Titulo, aqui no hay nada</title>
 </head>
 <body>
-	<h1 id="perdon">Licencias y pruebas</h1>
+	<h1 id="perdon">Pruebas</h1>
+	<div id="prub">
+	</div>
 	<script type="module">
 		import { PDFdy, Adapter, loadfile } from './src/PDFdy.js';
 		
-		const PDFF = await new PDFdy().setTemplate('templates_demos/templates/bunbu.template.html');
-		console.log(PDFF.build());
+		// Datos de prueba
+		
+		const datos = [
+			{title: "Espartaco"},
+			{title: "Doomentio"},
+			{title: "Aimep3"},
+			{title: "Oveja"}			
+			
+		];
+		
+		const PDF_BUILDER = await new PDFdy().setData(datos).setTemplate('templates_demos/templates/bunbu.template.html');
+		const PDF = PDF_BUILDER.build();
+		console.log(PDF.template);
 		
 	</script>
 </body>

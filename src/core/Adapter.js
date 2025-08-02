@@ -19,7 +19,7 @@ class Adapter {
 				// this.adapter_excel
 				break;
 			case 'array':
-				return AdapterData;
+				return adapterData;
 			default:
 				throw new Error("This adapter called '" + adapterType + "' not exist");
 				break;
