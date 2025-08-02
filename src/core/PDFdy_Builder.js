@@ -57,8 +57,8 @@ class PDFdy {
 
 
 	// Este metodo crea la  instancia de PDFdy_Main de la clase principal, pasandole los datos que se establesen aqui
-	build(){
-		return new PDFdy_Main();
+	build() {
+		return new PDFdy_Main(this.template, this.style, this.theme, this.data);
 	}
 
 }
