@@ -1,10 +1,12 @@
 import loadfile from './utils/loader';
+import Adapter from './Adapter.js';
+import PDFdy_Main from './PDFdy_Main.js';
 
 
 // La clase PDFdy, no es el sistema principal , es solo una interfaz que abstrae y facilita el uso de la clase PDFdy_Main.
 class PDFdy {
 	constructor(){
-		this.adapter = 'api'; // adaptador que se usara para pasar los datos.
+		this.adapter = 'array'; // adaptador que se usara para pasar los datos.
 		this.template = 'path/'; //  path del archivo, se usara como plantilla.
 		this.style = "path/";	//  path del archivo de estilos, contiene el css del template. ( obligatorio )
 		this.theme = "path/";	//  path del archivo de estilos, contiene los temas ( intercambiable ).
@@ -56,7 +58,7 @@ class PDFdy {
 
 	// Este metodo crea la  instancia de PDFdy_Main de la clase principal, pasandole los datos que se establesen aqui
 	build(){
-		return 0;
+		return new PDFdy_Main();
 	}
 
 }
