@@ -1,3 +1,5 @@
+import loadfile from './utils/loader';
+
 
 // La clase PDFdy, no es el sistema principal , es solo una interfaz que abstrae y facilita el uso de la clase PDFdy_Main.
 class PDFdy {
@@ -27,8 +29,8 @@ class PDFdy {
 
 
 	// [arg1]: String (path)
-	setTemplate(template){
-		this.template = template;
+	async setTemplate(template){
+		this.template = await loadfile(template);
 		return this;
 	};
 

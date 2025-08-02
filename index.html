@@ -6,13 +6,14 @@
 	<title>Titulo, aqui no hay nada</title>
 </head>
 <body>
-	<h1 id="puta">Licencias y pruebas</h1>
+	<h1 id="perdon">Licencias y pruebas</h1>
 	<script type="module">
-		import { PDFdy, Adapter } from './dist/PDFdy.es.js';
+		import { PDFdy, Adapter, loadfile } from './src/PDFdy.js';
 		
 		const PDFF = new PDFdy();
+		await PDFF.setTemplate('templates_demos/templates/bunbu.template.html')
 		console.log(PDFF);
-
+		
 	</script>
 </body>
 </html>

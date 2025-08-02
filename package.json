@@ -1,6 +1,6 @@
 {
   "name": "PDFdy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Esta herramienta tiene como objetivo automatizar la creación de catalogos PDF en base a catalogos digitales apartir de diferentes fuentes de información como archivos, APIs, Bases de datos y multiples recursos",
   "main": "index.js",
   "scripts": {

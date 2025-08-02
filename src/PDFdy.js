@@ -35,5 +35,6 @@
 import PDFdy from './core/PDFdy_Builder.js';
 import PDFdy_Main from './core/PDFdy_Main.js';
 import Adapter from './core/Adapter.js';
+import loadfile from './core/utils/loader.js';
 
-export { PDFdy, PDFdy_Main, Adapter };
+export { PDFdy, PDFdy_Main, Adapter, loadfile };
